@@ -22,13 +22,15 @@ export function Subscribe(){
     async function handleSubscribe(event: FormEvent) {
 
         event.preventDefault();
-        
+        //console.log()
         await createSubscriber({
             variables:{
                 name,
                 email,
             } 
         })
+
+        navigate('/event')
     }
 
     return(
@@ -59,8 +61,8 @@ export function Subscribe(){
                             />
                             <button
                             type="submit"
-                            def
-                            className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors"
+                            disabled={loading}
+                            className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
                             >
                                 Garatir minha vaga
                             </button>
